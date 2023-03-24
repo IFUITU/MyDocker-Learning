@@ -4,6 +4,9 @@ ENV WORKDIR=/app
 
 WORKDIR ${WORKDIR}
 
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1  
+
 COPY ./requirements.txt ${WORKDIR}
 
 RUN pip install --upgrade pip

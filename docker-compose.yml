@@ -1,0 +1,17 @@
+version: '3.8'
+
+
+services:
+  web:
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8000
+                  # python3 manage.py makemigrations &&
+                  # python3 manage.py migrate &&
+    
+
+    env_file: ./.env
+    image: django_docker
+    ports:
+      - 8000:8000
+    restart: "on-failure"
+    
